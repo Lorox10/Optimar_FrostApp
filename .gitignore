@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Compilados
+bin/
+obj/
+*.exe
+*.dll
+
+# Otros
+*.log
+*.tmp
+*.bak

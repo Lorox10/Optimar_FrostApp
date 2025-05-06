@@ -13,7 +13,7 @@ namespace Optimar_Frost
 {
     public partial class Form1 : Form
     {
-        private string connectionString = "server=localhost;user=root;password=Milgause-59;"; // <-- Cambia aquí tu contraseña si tienes
+        private string connectionString = "server=localhost;user=root;password=Milgause-59;"; 
         private MySqlConnection connection;
 
         public Form1()
@@ -89,42 +89,42 @@ namespace Optimar_Frost
             string queryUse = "USE Optimar_Frost;";
 
             string queryProductos = @"
-                CREATE TABLE IF NOT EXISTS Productos (
-                    id_producto INT PRIMARY KEY AUTO_INCREMENT,
-                    nombre VARCHAR(100),
-                    categoria VARCHAR(50),
-                    unidad_medida VARCHAR(20),
-                    cantidad_maxima FLOAT
-                );";
+        CREATE TABLE IF NOT EXISTS Productos (
+            id_producto INT PRIMARY KEY AUTO_INCREMENT,
+            nombre VARCHAR(100) NOT NULL,
+            categoria VARCHAR(50) NOT NULL,
+            unidad_medida VARCHAR(20) NOT NULL,
+            cantidad_maxima FLOAT CHECK (cantidad_maxima >= 0)
+        );";
 
             string queryProveedores = @"
-                CREATE TABLE IF NOT EXISTS Proveedores (
-                    id_proveedor INT PRIMARY KEY AUTO_INCREMENT,
-                    nombre VARCHAR(100),
-                    contacto VARCHAR(100)
-                );";
+        CREATE TABLE IF NOT EXISTS Proveedores (
+            id_proveedor INT PRIMARY KEY AUTO_INCREMENT,
+            nombre VARCHAR(100) NOT NULL,
+            contacto VARCHAR(100) NOT NULL
+        );";
 
             string queryStock = @"
-                CREATE TABLE IF NOT EXISTS Stock (
-                    id_stock INT PRIMARY KEY AUTO_INCREMENT,
-                    id_producto INT,
-                    cantidad_actual FLOAT,
-                    fecha_actualizacion DATETIME,
-                    FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
-                );";
+        CREATE TABLE IF NOT EXISTS Stock (
+            id_stock INT PRIMARY KEY AUTO_INCREMENT,
+            id_producto INT NOT NULL,
+            cantidad_actual FLOAT NOT NULL CHECK (cantidad_actual >= 0),
+            fecha_actualizacion DATETIME NOT NULL,
+            FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
+        );";
 
             string queryPedidos = @"
-                CREATE TABLE IF NOT EXISTS Pedidos (
-                    id_pedido INT PRIMARY KEY AUTO_INCREMENT,
-                    id_producto INT,
-                    cantidad_pedida FLOAT,
-                    fecha_pedido DATETIME,
-                    estado VARCHAR(20),
-                    id_proveedor INT,
-                    fecha_programada DATETIME,
-                    FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
-                    FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
-                );";
+        CREATE TABLE IF NOT EXISTS Pedidos (
+            id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+            id_producto INT,
+            cantidad_pedida FLOAT CHECK (cantidad_pedida > 0),
+            fecha_pedido DATETIME,
+            estado VARCHAR(20) NOT NULL CHECK (estado IN ('Pendiente', 'Procesado', 'Entregado', 'Cancelado')),
+            id_proveedor INT NOT NULL,
+            fecha_programada DATETIME,
+            FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
+            FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
+        );";
 
             MySqlCommand cmd = new MySqlCommand("", connection);
             cmd.CommandText = queryDB;
@@ -141,9 +141,19 @@ namespace Optimar_Frost
             cmd.ExecuteNonQuery();
         }
 
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            Producto producto = new Producto();
+
+             producto.Show();
+
+            this.Hide();
         }
     }
 }

@@ -148,5 +148,26 @@
   <ItemGroup>
     <None Include="Resources\refrigerator_kitchen_fridge_home_appliances_icon_229871.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\179603-circulo-coche-dodge-1920x1080.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img3.wallspic.com-bufanda-7680x5120.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img2.wallspic.com-armario_de_la_cocina-4961x3508.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img1.wallspic.com-congelacion-helada-lienzo-azul-turquesa-5760x3840.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XZ5V.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Q2Es.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4Cb2.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

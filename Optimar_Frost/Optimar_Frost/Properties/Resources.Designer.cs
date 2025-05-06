@@ -63,9 +63,29 @@ namespace Optimar_Frost.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4Cb2 {
+            get {
+                object obj = ResourceManager.GetObject("_4Cb2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo1 {
             get {
                 object obj = ResourceManager.GetObject("Fondo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Q2Es {
+            get {
+                object obj = ResourceManager.GetObject("Q2Es", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -77,6 +97,16 @@ namespace Optimar_Frost.Properties {
             get {
                 object obj = ResourceManager.GetObject("refrigerator_kitchen_fridge_home_appliances_icon_229871", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XZ5V {
+            get {
+                object obj = ResourceManager.GetObject("XZ5V", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

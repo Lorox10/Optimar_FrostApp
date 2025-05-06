@@ -56,6 +56,7 @@
             this.btnCrearBase.BackColor = System.Drawing.Color.DarkCyan;
             this.btnCrearBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCrearBase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCrearBase.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearBase.ForeColor = System.Drawing.Color.NavajoWhite;
             this.btnCrearBase.Location = new System.Drawing.Point(360, 256);
             this.btnCrearBase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -82,6 +83,7 @@
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Visible = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnSalir
             // 
